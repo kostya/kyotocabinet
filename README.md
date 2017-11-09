@@ -33,7 +33,7 @@ end
 
 db.close
 ```
-## Compare with LevelDB
+## Compare with [LevelDB](https://github.com/crystal-community/leveldb)
 
 | test                     | LevelDB | KyotoCabinet |
 | ------------------------ | ------- | ------------ |
