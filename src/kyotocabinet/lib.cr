@@ -47,5 +47,22 @@ module Kyotocabinet
     fun dbclose = kcdbclose(db : KCDB) : Int32
     fun dbecode = kcdbecode(db : KCDB) : Int32
     fun dbemsg = kcdbemsg(db : KCDB) : UInt8*
+
+    fun dbset = kcdbset(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, vbuf : UInt8*, vsiz : LibC::SizeT) : Int32
+    fun dbadd = kcdbadd(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, vbuf : UInt8*, vsiz : LibC::SizeT) : Int32
+    fun dbreplace = kcdbreplace(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, vbuf : UInt8*, vsiz : LibC::SizeT) : Int32
+
+    fun dbremove = kcdbremove(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT) : Int32
+    fun dbget = kcdbget(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, sp : LibC::SizeT*) : UInt8*
+    fun dbgetbuf = kcdbgetbuf(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, vbuf : UInt8*, max : LibC::SizeT) : Int32
+    fun dbcheck = kcdbcheck(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT) : Int32
+    fun dbseize = kcdbseize(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, sp : LibC::SizeT*) : UInt8*
+
+    fun dbclear = kcdbclear(db : KCDB) : Int32
+
+    fun dbcount = kcdbcount(db : KCDB) : Int64
+    fun dbsize = kcdbsize(db : KCDB) : Int64
+    fun dbpath = kcdbpath(db : KCDB) : UInt8*
+    fun dbstatus = kcdbstatus(db : KCDB) : UInt8*
   end
 end
