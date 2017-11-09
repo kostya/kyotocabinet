@@ -1,6 +1,6 @@
 # kyotocabinet
 
-Fast Persistent KeyValue Storage. Wrapper for [KyotoCabinet](http://fallabs.com/kyotocabinet/)
+Fast Persistent Embedded KeyValue Storage. Wrapper for [KyotoCabinet](http://fallabs.com/kyotocabinet/)
 
 ## Installation
 
