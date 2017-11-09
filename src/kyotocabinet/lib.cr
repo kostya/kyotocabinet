@@ -1,5 +1,5 @@
-@[Link(ldflags: "#{__DIR__}/../ext/kyotocabinet-1.2.76/libkyotocabinet.a -lstdc++ -lm -lz")]
-module Kyotocabinet
+@[Link(ldflags: "#{__DIR__}/../ext/kyotocabinet-1.2.76/libkyotocabinet.a -lstdc++ -lm -lz -stdlib=libstdc++")]
+module KyotoCabinet
   lib Lib
     type KCDB = Void*
     type KCCUR = Void*
@@ -60,10 +60,18 @@ module Kyotocabinet
     fun dbseize = kcdbseize(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, sp : LibC::SizeT*) : UInt8*
 
     fun dbclear = kcdbclear(db : KCDB) : Int32
+    fun free = kcfree(ptr : Void*)
 
+    # === stats ========
     fun dbcount = kcdbcount(db : KCDB) : Int64
     fun dbsize = kcdbsize(db : KCDB) : Int64
     fun dbpath = kcdbpath(db : KCDB) : UInt8*
     fun dbstatus = kcdbstatus(db : KCDB) : UInt8*
+
+    # === cursor ======
+    fun dbcursor = kcdbcursor(db : KCDB) : KCCUR
+    fun curdel = kccurdel(cur : KCCUR)
+    fun curget = kccurget(cur : KCCUR, ksp : LibC::SizeT*, vbp : UInt8**, vsp : LibC::SizeT*, step : Int32) : UInt8*
+    fun curjump = kccurjump(cur : KCCUR) : Int32
   end
 end

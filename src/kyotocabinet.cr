@@ -1,5 +1,6 @@
 require "./kyotocabinet/*"
 
-module Kyotocabinet
-  # TODO Put your code here
+module KyotoCabinet
+  class Error < Exception
+  end
 end
