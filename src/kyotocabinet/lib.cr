@@ -1,6 +1,6 @@
 @[Link(ldflags: "#{__DIR__}/../ext/kyotocabinet-1.2.76/libkyotocabinet.a -lstdc++ -lm -lz")]
 module Kyotocabinet
-  lib Kc
+  lib Lib
     type KCDB = Void*
     type KCCUR = Void*
     type KCSTR = Void*
@@ -46,6 +46,7 @@ module Kyotocabinet
     fun dbopen = kcdbopen(db : KCDB, path : UInt8*, mode : Mode) : Int32
     fun dbclose = kcdbclose(db : KCDB) : Int32
     fun dbecode = kcdbecode(db : KCDB) : Int32
+    fun ecodename = kcecodename(code : Int32) : UInt8*
     fun dbemsg = kcdbemsg(db : KCDB) : UInt8*
 
     fun dbset = kcdbset(db : KCDB, kbuf : UInt8*, ksiz : LibC::SizeT, vbuf : UInt8*, vsiz : LibC::SizeT) : Int32
