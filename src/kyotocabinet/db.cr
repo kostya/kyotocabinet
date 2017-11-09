@@ -33,6 +33,7 @@ class KyotoCabinet::DB
     end
   end
 
+  @[AlwaysInline]
   def set(key : String, value : String)
     if Lib.dbset(@db, key, key.bytesize, value, value.bytesize) == 0
       raise Error.new("set error '#{last_ecode_name}'")
@@ -44,6 +45,7 @@ class KyotoCabinet::DB
     set(key, value)
   end
 
+  @[AlwaysInline]
   def get(key : String)
     vbuf = Lib.dbget(@db, key, key.bytesize, out vsiz)
     unless vbuf.null?
