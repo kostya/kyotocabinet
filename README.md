@@ -1,6 +1,6 @@
 # kyotocabinet
 
-TODO: Write a description here
+Fast Persistent KeyValue Storage. Wrapper for [KyotoCabinet](http://fallabs.com/kyotocabinet/)
 
 ## Installation
 
@@ -9,29 +9,19 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   kyotocabinet:
-    github: [your-github-name]/kyotocabinet
+    github: kostya/kyotocabinet
 ```
 
 ## Usage
 
 ```crystal
 require "kyotocabinet"
+
+db = KyotoCabinet::DB.new("./1.kch")
+
+db.set("key", "value")
+p db.get("key") # => "value"
+db.del("key")
+
+db.close
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/kyotocabinet/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) Konstantin Makarchev - creator, maintainer
