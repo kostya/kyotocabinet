@@ -1,0 +1,17 @@
+name: test-leveldb
+version: 0.1.0
+
+authors:
+  - Konstantin Makarchev <kostya27@gmail.com>
+
+targets:
+  test-leveldb:
+    main: src/test-leveldb.cr
+
+crystal: 0.23.1
+
+license: MIT
+
+dependencies:
+  leveldb:
+    github: "crystal-community/leveldb"

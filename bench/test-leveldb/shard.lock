@@ -1,0 +1,6 @@
+version: 1.0
+shards:
+  leveldb:
+    github: crystal-community/leveldb
+    version: 0.1.0
+
