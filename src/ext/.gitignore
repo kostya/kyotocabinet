@@ -1,0 +1,4 @@
+kyotocabinet-1.2.76
+*.tar
+*.tar.gz
+*.tag.gz*
