@@ -8,7 +8,7 @@ end
 Kyotocabinet::Lib.dbset(db, "foo", 3, "hop", 3)
 
 ch = Kyotocabinet::Lib.dbget(db, "foo", 3, out size)
-p String.new(ch, size_t)
+p String.new(ch, size)
 
 # /* main routine */
 # int main(int argc, char** argv) {
