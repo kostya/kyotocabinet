@@ -26,4 +26,4 @@ p s
 p "each #{Time.now - t}"
 
 db.close
-db.destroy
+# db.destroy

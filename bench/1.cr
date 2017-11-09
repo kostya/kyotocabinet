@@ -1,5 +1,6 @@
 require "../src/kyotocabinet"
 
+File.delete("1.kch")
 db = KyotoCabinet::DB.new("1.kch")
 N = 500_000
 
@@ -26,4 +27,3 @@ p s
 p "each #{Time.now - t}"
 
 db.close
-db.drop!
