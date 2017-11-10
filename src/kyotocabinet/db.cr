@@ -98,8 +98,8 @@ class KyotoCabinet::DB
         kbuf = Lib.curget(cur, out ksiz, out cvbuf, out vsiz, 1)
         break if kbuf.null?
         key = String.new(kbuf, ksiz)
-        Lib.free(kbuf)
-        yield(key, String.new(cvbuf, vsiz))
+        value = String.new(cvbuf, vsiz)
+        yield(key, value)
       end
     ensure
       Lib.curdel(cur)
