@@ -1,8 +1,8 @@
 require "../src/kyotocabinet"
 
-File.delete("1.kch")
+File.delete("1.kch") if File.exists?("1.kch")
 db = KyotoCabinet::DB.new("1.kch")
-N = 500_000
+N = 1_000_000
 
 t = Time.now
 N.times do |i|

@@ -37,7 +37,7 @@ db.close
 
 | test                     | LevelDB | KyotoCabinet |
 | ------------------------ | ------- | ------------ |
-| 500K set                 | 3.96s   | 0.86s        |
-| 500K get                 | 1.94s   | 0.57s        |
-| iterate over all records | 0.21s   | 0.30s        |
-| db size                  | 8.4Mb   | 26.2Mb       |
+| 1mln set                 | 3.66s   | 1.00s        |
+| 1mln get                 | 1.95s   | 0.63s        |
+| iterate over all records | 0.27s   | 0.31s        |
+| db size                  | 16Mb    | 45Mb         |

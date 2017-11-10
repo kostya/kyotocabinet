@@ -1,7 +1,7 @@
 require "leveldb"
 
 db = LevelDB::DB.new("./1.db")
-N = 500_000
+N = 1_000_000
 
 t = Time.now
 N.times do |i|
