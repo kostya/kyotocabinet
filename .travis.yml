@@ -1,2 +1,3 @@
 language: crystal
 before_script: cd src/ext && make package && cd -
+
