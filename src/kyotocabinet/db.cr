@@ -99,6 +99,7 @@ class KyotoCabinet::DB
         break if kbuf.null?
         key = String.new(kbuf, ksiz)
         value = String.new(cvbuf, vsiz)
+        Lib.free(kbuf)
         yield(key, value)
       end
     ensure
