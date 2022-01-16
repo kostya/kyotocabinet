@@ -1,5 +1,5 @@
-@[Link(ldflags: "#{__DIR__}/../ext/kyotocabinet-1.2.76/libkyotocabinet.a -lstdc++ -lm -lz")]
 module KyotoCabinet
+  @[Link(ldflags: "#{__DIR__}/../ext/kyotocabinet-1.2.79/libkyotocabinet.a -lstdc++ -lm -lz")]
   lib Lib
     type KCDB = Void*
     type KCCUR = Void*
